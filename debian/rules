@@ -3,6 +3,7 @@
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 %:
+	#dh ${@} --with systemd
 	dh ${@}
 
 override_dh_auto_clean:
@@ -16,9 +17,9 @@ override_dh_auto_configure:
 
 	dh_auto_configure -- \
 		--prefix=/usr --localstatedir=/var \
-		--enable-libkms --enable-pango \
-		--enable-systemd-integration --enable-tracing \
-		--disable-gdm-transition --disable-tests \
+		--enable-pango --enable-systemd-integration \
+		--enable-tracing --disable-gdm-transition \
+		--disable-libkms --disable-tests \
 		--with-background-color=0x005a8a \
 		--with-gdm-autostart-file \
 		--with-log-viewer \
@@ -55,9 +56,12 @@ override_dh_install:
 	install -D -m 0755 debian/local/plymouth-update-initrd debian/plymouth/usr/lib/$(DEB_HOST_MULTIARCH)/plymouth/plymouth-update-initrd
 	install -D -m 0644 debian/local/plymouth.lsb debian/plymouth/lib/lsb/init-functions.d/99-plymouth
 
+override_dh_systemd_start:
+	dh_systemd_start --no-start
+
 override_dh_installinit:
-	dh_installinit --no-start -- start 21 2 3 4 5 . stop 02 0 6 .
-	dh_installinit --no-start --name=plymouth-log -- start 37 S .
+	dh_installinit --no-start -- start . 2 3 4 5 . stop . 0 6 .
+	dh_installinit --no-start --name=plymouth-log -- start . S .
 
 override_dh_link:
 	# correcting symlink targets
@@ -71,3 +75,6 @@ override_dh_link:
 override_dh_makeshlibs:
 	dh_makeshlibs -p plymouth
 	dh_makeshlibs -p plymouth-drm
+
+override_dh_strip:
+	dh_strip --dbg-package=plymouth-dbg

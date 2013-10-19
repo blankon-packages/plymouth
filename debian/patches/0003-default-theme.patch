@@ -8,7 +8,7 @@ diff -Naurp plymouth.orig/src/plymouthd.conf plymouth/src/plymouthd.conf
  # Administrator customizations go in this file
  #[Daemon]
 -#Theme=fade-in
-+#Theme=text
++Theme=blankon
 diff -Naurp plymouth.orig/src/plymouthd.defaults plymouth/src/plymouthd.defaults
 --- plymouth.orig/src/plymouthd.defaults
 +++ plymouth/src/plymouthd.defaults
@@ -17,4 +17,4 @@ diff -Naurp plymouth.orig/src/plymouthd.defaults plymouth/src/plymouthd.defaults
  # upgrades.
  [Daemon]
 -Theme=spinner
-+Theme=text
++Theme=blankon

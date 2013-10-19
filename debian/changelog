@@ -1,8 +1,58 @@
-plymouth (0.8.8-9blankon1) suroboyo; urgency=low
+plymouth (0.8.8-14blankon1) suroboyo; urgency=low
 
-  * New upstream bug fix
+  * New Upstram Release
+  * 0003-default-theme blankon as default theme
+  * debian/control suggests: plymouth-theme-blankon
 
- -- Mahyuddin Idram Ahmad <dotovr@di.blankon.in>  Sat, 15 Jun 2013 21:48:27 +0700
+ -- mijortsa <azis.astrojim@surabaya.di.blankon.in>  Sat, 19 Oct 2013 23:38:42 +0700
+
+plymouth (0.8.8-14) experimental; urgency=low
+
+  * Merging drm themes into plymouth-themes package.
+  * Adding debug package.
+  * Sourcing init-functions in iniscripts.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Wed, 18 Sep 2013 10:18:16 +0200
+
+plymouth (0.8.8-13) experimental; urgency=low
+
+  * Updating todo file.
+  * Building without libkms support (Closes: #720560).
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Fri, 23 Aug 2013 14:17:45 +0200
+
+plymouth (0.8.8-12) experimental; urgency=low
+
+  * Updating todo file.
+  * Updating vcs fields.
+  * Applying slightly modified patch from Sjoerd Simons
+    <sjoerd@debian.org> to use dh-systemd (Closes: #719121).
+  * Applying slightly modified patch from Sjoerd Simons
+    <sjoerd@debian.org> to add aliases to the systemd service so they mask
+    the LSB init scripts.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 12 Aug 2013 10:08:14 +0200
+
+plymouth (0.8.8-11) experimental; urgency=low
+
+  * Adding vcs fields.
+  * Wrapping control fields.
+  * Adding patch from Ray Strode <rstrode@redhat.com> to ignore leading
+    spaces and blank lines in config parser (Closes: #664187).
+  * Updating lintian overrides.
+  * Updating plymouth manpage symlinks.
+  * Adding todo file.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Wed, 17 Jul 2013 21:30:52 +0200
+
+plymouth (0.8.8-10) experimental; urgency=low
+
+  * Rebuilding initrd on removal.
+  * Dropping obsolete sysvinit initscript start/stop numbers.
+  * Updating plymouth call on stop for proper shutdown (Closes: #610287,
+    #712543).
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 17 Jun 2013 10:36:07 +0200
 
 plymouth (0.8.8-9) experimental; urgency=low
 
