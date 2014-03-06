@@ -1,3 +1,9 @@
+plymouth (0.8.8-14blankon2) tambora; urgency=medium
+
+  * New release tambora
+
+ -- mijortsa <azis.astrojim@surabaya.di.blankon.in>  Thu, 06 Mar 2014 22:31:32 +0700
+
 plymouth (0.8.8-14blankon1) suroboyo; urgency=low
 
   * New Upstram Release
